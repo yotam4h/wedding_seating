@@ -1,5 +1,4 @@
 from pathlib import Path
-
 from setuptools import find_packages, setup  # type: ignore[import-not-found]
 
 
@@ -19,7 +18,7 @@ def read_long_description() -> str:
 
 setup(
 	name="wedding-seating",
-	version="0.1.0",
+	version="0.2.0",
 	description="Optimize wedding seating arrangements with VIP, conflict, and friend heuristics.",
 	long_description=read_long_description(),
 	long_description_content_type="text/markdown",
