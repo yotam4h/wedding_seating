@@ -55,3 +55,4 @@ def test_cli_missing_file_returns_error(capsys: pytest.CaptureFixture[str]) -> N
 
 	assert exit_code == 1
 	assert "does-not-exist" in captured.err
+

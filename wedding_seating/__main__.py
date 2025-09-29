@@ -57,11 +57,6 @@ def _build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
-        "--visualize",
-        action="store_true",
-        help="Render the seating chart with matplotlib.",
-    )
-    parser.add_argument(
         "--no-print",
         action="store_true",
         help="Suppress printing table assignments to stdout.",
@@ -116,9 +111,6 @@ def main(argv: Optional[Iterable[str]] = None) -> int:
             except Exception as exc:  # pragma: no cover - defensive export error
                 print(f"Error exporting {fmt.upper()} file: {exc}", file=sys.stderr)
                 return 1
-
-    if args.visualize:
-        planner.visualize()
 
     return 0
 

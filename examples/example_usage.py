@@ -8,9 +8,6 @@ guest_list = import_guest_list_csv("guests.csv")
 seating = WeddingSeating(guest_list, table_size=10, vip_tables=3)
 seating.optimize()
 
-# Visualize
-seating.visualize()
-
 # Export to CSV and PDF
 seating.export("wedding_seating", "csv")
 seating.export("wedding_seating", "pdf")

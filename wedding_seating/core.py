@@ -4,7 +4,6 @@ from typing import Dict, Iterable, List, Optional, Set
 
 from .types import Guest, Table, Tables
 from .utils import save_csv, save_pdf
-from .visualization import plot_seating_chart
 
 class WeddingSeating:
     def __init__(
@@ -151,9 +150,6 @@ class WeddingSeating:
                 break
 
     # --- Output methods ---
-    def visualize(self) -> None:
-        plot_seating_chart(self.tables)
-
     def export(self, filename: str = 'seating', filetype: str = 'csv') -> None:
         if filetype == 'csv':
             save_csv(self.tables, filename + '.csv')

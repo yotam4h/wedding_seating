@@ -1,13 +1,12 @@
 # Wedding Seating Planner
 
-Plan stress-free receptions by automatically arranging guests into balanced tables while respecting VIPs, friendships, and conflicts. This lightweight library provides seating optimization, data import/export helpers, and quick visualizations so you can iterate on layouts with confidence.
+Plan stress-free receptions by automatically arranging guests into balanced tables while respecting VIPs, friendships, and conflicts. This lightweight library provides seating optimization and data import/export helpers so you can iterate on layouts with confidence.
 
 ## Features
 
 - **Smart assignment** – group families, seat VIPs first, and iteratively swap guests to improve satisfaction.
 - **Conflict awareness** – honor `avoid` relationships and encourage friends or shared groups to sit together.
-- **One-stop workflow** – import guests from CSV, optimize a layout, visualize it, and export the final plan to CSV or PDF.
-- **Matplotlib visual outputs** – spot imbalances at a glance with an automatic seating chart plot.
+- **One-stop workflow** – import guests from CSV, optimize a layout, and export the final plan to CSV or PDF.
 
 ## Installation
 
@@ -17,10 +16,10 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-The library depends on `pandas`, `reportlab`, and `matplotlib`. If you prefer to install directly, run:
+The library depends on `pandas` and `reportlab`. If you prefer to install directly, run:
 
 ```bash
-pip install pandas reportlab matplotlib
+pip install pandas reportlab
 ```
 
 ## Guest list format
@@ -53,7 +52,6 @@ planner = WeddingSeating(
 )
 
 tables = planner.optimize()
-planner.visualize()           # matplotlib seating chart
 planner.export("seating", "csv")  # write seating.csv
 planner.export("seating", "pdf")  # write seating.pdf
 
@@ -80,7 +78,6 @@ python -m wedding_seating guests.csv \
 - `guests.csv` is your input file following the schema above.
 - Use `--export-prefix` to write `seating_plan.csv` (and `.pdf` if you add `--export-format pdf`).
 - Drop the `--no-print` flag to see each table listed in the console.
-- Add `--visualize` to open the Matplotlib seating chart after optimization.
 
 ## How it works
 
@@ -104,7 +101,7 @@ Run the automated tests after making changes:
 pytest
 ```
 
-Feel free to extend the optimization strategy, hook in alternative scoring rules, or customize the visualization in `wedding_seating/visualization.py`.
+Feel free to extend the optimization strategy or hook in alternative scoring rules.
 
 ## License
 
